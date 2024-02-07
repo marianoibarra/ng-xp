@@ -12,7 +12,7 @@
       },
       "root": "",
       "sourceRoot": "src",
-      "prefix": "app",
+      "prefix": "xp",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:application",
@@ -90,7 +90,9 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.scss"
+              "src/styles.scss",
+              "src/reset.css"
+
             ],
             "scripts": []
           }
