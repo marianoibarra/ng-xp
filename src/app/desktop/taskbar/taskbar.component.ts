@@ -9,19 +9,19 @@ import { themes } from '../../utils/config';
   standalone: true,
   imports: [CommonModule],
   templateUrl: './taskbar.component.html',
-  styleUrl: './taskbar.component.scss'
+  styleUrl: './taskbar.component.scss',
 })
 export class TaskbarComponent implements OnInit, OnDestroy {
 
-  themePath?: string
+  private _theme?: string
   clock = new Date()
   clockSubs$?: Subscription
   startIsOpen: boolean = false
 
   constructor(private userSettings: UserSettingsService) {}
 
-  @HostBinding('style.backgroundImage') get wallpaper() {
-    return `url("/assets/taskbar/${this.themePath}/bg.png")`
+  @HostBinding('class') get theme() {
+    return 'theme-' + this._theme
   }
 
   ngOnInit(): void {
@@ -35,7 +35,7 @@ export class TaskbarComponent implements OnInit, OnDestroy {
 
   private setTheme(): void {
     const themeIndex = this.userSettings.getSetting('theme')
-    this.themePath = themes[themeIndex].path
+    this._theme = themes[themeIndex].key
   }
 
   private setClock(): void {
@@ -45,14 +45,5 @@ export class TaskbarComponent implements OnInit, OnDestroy {
         this.clock = newDate
       }
     })
-  }  
-
-
-  get startStyle(): any {
-    return {backgroundImage: `url("/assets/taskbar/${this.themePath}/start.png")`}
-  }
-
-  get trayStyle(): any {
-    return {backgroundImage: `url("/assets/taskbar/${this.themePath}/tray.png")`}
   }
 }

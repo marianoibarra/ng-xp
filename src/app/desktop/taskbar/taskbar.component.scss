@@ -31,6 +31,7 @@
   font-style: italic;
   text-shadow: 1px 1px 3px #000e;
   cursor: pointer;
+  user-select: none;
   &:hover {
     background-position: 0 60px;
   }  
@@ -42,7 +43,8 @@
 
 .tray {
   padding-inline: 16px;
-  border-left: 1px #12305290 solid;
+  border-left-width: 1px;
+  border-left-style: solid;
 }
 
 .clock {
@@ -51,4 +53,53 @@
   display: flex;
   align-items: center;
   font-size: 11px;
+}
+
+
+::ng-deep .theme-silver {
+  background-image: url("/assets/taskbar/silver/bg.png");
+
+  .start-button {
+    background-image: url("/assets/taskbar/silver/start.png");
+  }
+
+  .clock {
+    color: #000
+  }
+  .tray {
+    background-image: url("/assets/taskbar/silver/tray.png");
+    border-left-color: #1c1c1f90;
+  }
+}
+
+::ng-deep .theme-blue {
+  background-image: url("/assets/taskbar/blue/bg.png");
+
+  .start-button {
+    background-image: url("/assets/taskbar/blue/start.png");
+  }
+
+  .clock {
+    color: #fff;
+  }
+  .tray {
+    background-image: url("/assets/taskbar/blue/tray.png");
+    border-left-color: #12305290;
+  }
+}
+
+::ng-deep .theme-olive {
+  background-image: url("/assets/taskbar/olive/bg.png");
+
+  .start-button {
+    background-image: url("/assets/taskbar/olive/start.png");
+  }
+
+  .clock {
+    color: #41400a;
+  }
+  .tray {
+    background-image: url("/assets/taskbar/olive/tray.png");
+    border-left-color: #968b4b;
+  }
 }

@@ -56,20 +56,20 @@ export interface Wallpaper {
 
 export const themes: Theme[] = [
   {
-    name: 'Default (blue)',
-    path: 'blue'
+    key: 'blue',
+    name: 'Default (blue)'
   },
   {
-    name: 'Silver',
-    path: 'silver'
+    key: 'silver',
+    name: 'Silver'
   },
   {
-    name: 'Olive Green',
-    path: 'olive'
+    key: 'olive',
+    name: 'Olive Green'
   }
 ]
 
 export interface Theme {
-  name: string,
-  path: string
+  key: string,
+  name: string
 }
