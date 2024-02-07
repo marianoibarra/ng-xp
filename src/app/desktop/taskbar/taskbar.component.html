@@ -1,1 +1,17 @@
-<p>taskbar works!</p>
+<div class="start-button" 
+  [ngClass]="{opened: startIsOpen}" 
+  [ngStyle]="startStyle" 
+  (click)="startIsOpen = !startIsOpen">
+  Inicio
+</div>
+<div class="running-apps-wrapper">
+
+</div>
+<div class="tray" [ngStyle]="trayStyle" >
+  <ul class="tray-icons">
+
+  </ul>
+  <p class="clock">
+    {{clock | date:'HH:mm'}}
+  </p>
+</div>

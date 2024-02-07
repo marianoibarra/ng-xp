@@ -1,0 +1,54 @@
+:host {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 30px;
+  overflow: hidden;
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch;
+  color: white;
+}
+
+.running-apps-wrapper {
+  display: flex;
+  flex: 1;
+}
+
+.start-button {
+  box-sizing: border-box;
+  background-color: transparent !important;
+  outline: none !important;
+  border: none !important;
+  width: 98px;
+  padding-left: 36px;
+  padding-top: 2px;
+  display: flex;
+  align-items: center;
+  font-family: 'Libre Franklin';
+  font-weight: 600;
+  font-style: italic;
+  text-shadow: 1px 1px 3px #000e;
+  cursor: pointer;
+  &:hover {
+    background-position: 0 60px;
+  }  
+}
+
+.start-button.opened {
+  background-position: 0 30px;
+}
+
+.tray {
+  padding-inline: 16px;
+  border-left: 1px #12305290 solid;
+}
+
+.clock {
+  height: 100%;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  font-size: 11px;
+}
