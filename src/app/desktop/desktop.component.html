@@ -1,1 +1,31 @@
 <xp-taskbar />
+
+<div class="grid-desktop" [cdkContextMenuTriggerFor]="desktop_context_menu" (click)="deselectAll()">
+  @for (item of desktopIcons; track $index) {
+    <div class="desktop-item" [class.selected]="selected.includes(item)" [cdkContextMenuTriggerFor]="program_context_menu" (click)="onClick(item, $event)" (dblclick)="item.open()">
+      @if(selected.includes(item)) {
+        <div class="selected-icon" [style.mask-image]="'url(/assets/icons/' + item.icon + ')'"></div>
+      }
+      <img [src]="'/assets/icons/' + item.icon" [alt]="item.name"/>
+      <span>{{item.name}}</span>
+    </div>
+  }
+</div>
+
+
+<ng-template #desktop_context_menu>
+  <div class="context-menu" cdkMenu>
+    <button class="context-menu-item" cdkMenuItem>Actualizar</button>
+    <hr>
+    <button class="context-menu-item" cdkMenuItem>Nuevo</button>
+    <button class="context-menu-item" cdkMenuItem disabled>Pegar</button>
+    <button class="context-menu-item" cdkMenuItem>Propiedades</button>
+  </div>
+</ng-template>
+
+<ng-template #program_context_menu>
+  <div class="context-menu" cdkMenu>
+    <button class="context-menu-item" cdkMenuItem>Abrir</button>
+    <button class="context-menu-item" cdkMenuItem>Propiedades</button>
+  </div>
+</ng-template>

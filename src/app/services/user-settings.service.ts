@@ -8,7 +8,7 @@ interface DefaultSettings {
 export class UserSettingsService {
   private readonly DEFAULT_SETTINGS: DefaultSettings = {
     wallpaper: 0,
-    theme: 0,
+    theme: 1,
   };
 
   getSetting(key: keyof DefaultSettings): any {
